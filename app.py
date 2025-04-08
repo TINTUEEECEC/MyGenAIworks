@@ -2,12 +2,16 @@ import streamlit as st
 from dotenv import load_dotenv
 load_dotenv()
 import os
+import pandas as pd
 import google.generativeai as genai
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model=genai.GenerativeModel("models/gemini-1.5-pro")
 def get_gemini_response(question):
     response=model.generate_content(question)
     return response.text
+
+
+
 
 #initialise our streamlit app
 st.set_page_config(page_title="Q&A Demo")

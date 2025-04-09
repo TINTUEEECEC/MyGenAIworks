@@ -5,6 +5,7 @@ import os
 import google.generativeai as genai
 from PIL import Image
 import pandas as pd
+import numpy as np
 
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
